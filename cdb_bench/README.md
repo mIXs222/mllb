@@ -9,7 +9,9 @@
 
 One-time configuration
 ```
+bash configure.sh
 bash cdb_bench/configure.sh
+brew install cockroachdb/tap/cockroach  # Change accordingly to your package manager
 ```
 
 Example: to spin up 5 nodes
@@ -19,14 +21,14 @@ bash cdb_bench/cdb_start.sh 5
 
 Start HAProxy
 ```
-bash cdb_bench/haproxy_start.sh
+bash cdb_bench/haproxy_start.sh haprox-2.4-alpine-dev
 ```
 
 Generate workload (https://www.cockroachlabs.com/docs/stable/cockroach-workload.html). Workload choices are `bank`, `intro`, `kv`, `movr`, `startrek`, `tpcc`, `yscb`.
 ```
-WORKLOAD=yscb
-cockroach workload init ${WORKLOAD} 'postgresql://root@127.0.01:26257?sslmode=disable'
-cockroach workload run ${WORKLOAD} --duration=5m 'postgresql://root@127.0.01:26257?sslmode=disable'
+WORKLOAD=movr
+cockroach workload init ${WORKLOAD} 'postgresql://root@127.0.0.1:26257?sslmode=disable'
+cockroach workload run ${WORKLOAD} --duration=5m 'postgresql://root@127.0.0.1:26257?sslmode=disable'
 ```
 
 

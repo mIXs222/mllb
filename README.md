@@ -6,5 +6,6 @@ Repository map
 
 Load all submodules with
 ```
+git submodule init
 git submodule update --recursive
 ```
