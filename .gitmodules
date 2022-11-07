@@ -1,3 +1,6 @@
 [submodule "haproxy"]
 	path = haproxy
 	url = https://github.com/mixs222/haproxy
+[submodule "cockroach"]
+	path = cockroach
+	url = https://github.com/mIXs222/cockroach.git

@@ -15,4 +15,5 @@ if [ "$1" = 'haproxy' ]; then
   set -- haproxy -W -db "$@"
 fi
 
-exec "$@"
+/sbin/syslogd -O /proc/1/fd/1
+exec "$@" 2>& 1 | tee /var/lib/haproxy/stdio.log
