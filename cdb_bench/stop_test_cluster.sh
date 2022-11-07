@@ -19,6 +19,11 @@ then
   echo "Require at least 1 nodes"
   exit 1
 fi
+
+#Take down HAProxy container
+docker stop haproxy
+docker rm haproxy
+
 all_roaches="roach1"
 for ((j = 2; j <= ${NUM_NODES}; j++)) do
   all_roaches+=" roach${j}"
