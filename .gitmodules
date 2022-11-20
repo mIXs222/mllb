@@ -4,3 +4,6 @@
 [submodule "cockroach"]
 	path = cockroach
 	url = https://github.com/mIXs222/cockroach.git
+[submodule "park"]
+	path = park
+	url = https://github.com/mIXs222/park.git
