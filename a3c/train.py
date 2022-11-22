@@ -6,9 +6,10 @@ import pickle
 import time
 from datetime import datetime
 import park
+import mxnet as mx
 import numpy as np
 from config import Config
-from envs import IdentityPreprocessor
+from envs import IdentityPreprocessor, HistoryPreprocessor
 from model import Agent
 
 def train_episode(agent, envs, preprocessors, t_max, render):
@@ -28,7 +29,8 @@ def train_episode(agent, envs, preprocessors, t_max, render):
     all_done = False
     t = 1
     while not all_done:
-        step_xs = np.vstack([o.ravel() for o in observations])
+        # step_xs = np.vstack([o.ravel() for o in observations])
+        step_xs = np.array(observations)  # envs x hist x servers
 
         # Get actions and values for all environments in a single forward pass.
         step_ps, step_vs = agent.forward(step_xs)
@@ -40,7 +42,7 @@ def train_episode(agent, envs, preprocessors, t_max, render):
                 obs, r, done[i], _ = env.step(step_as[i])
 
                 # Record the observation, action, value, and reward in the buffers.
-                env_xs[i].append(step_xs[i].ravel())
+                env_xs[i].append(step_xs[i])
                 env_as[i].append(step_as[i])
                 env_vs[i].append(step_vs[i][0])
                 env_rs[i].append(r)
@@ -52,20 +54,20 @@ def train_episode(agent, envs, preprocessors, t_max, render):
                 else:
                     observations[i] = preprocessors[i].preprocess(obs)
 
-        # # Perform an update every `t_max` steps.
-        # if t == t_max:
-        #     # If the episode has not finished, add current state's value. This will be used to
-        #     # 'bootstrap' the final return (see Algorithm S3 in A3C paper).
-        #     _, extra_vs = agent.forward(np.vstack(observations).reshape(num_envs, -1))
-        #     for i in range(num_envs):
-        #         if not done[i]:
-        #             env_vs[i].append(extra_vs[i][0])
+        # Perform an update every `t_max` steps.
+        if t == t_max:
+            # If the episode has not finished, add current state's value. This will be used to
+            # 'bootstrap' the final return (see Algorithm S3 in A3C paper).
+            _, extra_vs = agent.forward(step_xs)
+            for i in range(num_envs):
+                if not done[i]:
+                    env_vs[i].append(extra_vs[i][0])
 
-        #     # Perform update and clear buffers.
-        #     agent.train_step(env_xs, env_as, env_rs, env_vs)
-        #     env_xs, env_as = _2d_list(num_envs), _2d_list(num_envs)
-        #     env_rs, env_vs = _2d_list(num_envs), _2d_list(num_envs)
-        #     t = 0
+            # Perform update and clear buffers.
+            agent.train_step(env_xs, env_as, env_rs, env_vs)
+            env_xs, env_as = _2d_list(num_envs), _2d_list(num_envs)
+            env_rs, env_vs = _2d_list(num_envs), _2d_list(num_envs)
+            t = 0
 
         all_done = np.all(done)
         t += 1
@@ -93,7 +95,7 @@ if __name__ == '__main__':
     parser.add_argument('--save-dir', default='./checkpoints')
     parser.add_argument('--save-every', type=int, default=1000)
     parser.add_argument('--num-episodes', type=int, default=100000)
-    parser.add_argument('--learning-rate', type=float, default=1e-3)
+    parser.add_argument('--learning-rate', type=float, default=1e-1)
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--print-every', type=int, default=1)
     parser.add_argument('--gpu', action='store_true')
@@ -111,7 +113,7 @@ if __name__ == '__main__':
 
     # Create and seed the environments
     envs = [park.make("haproxy") for _ in range(args.num_envs)]
-    preprocessors = [IdentityPreprocessor(np.prod(envs[0].observation_space.shape))
+    preprocessors = [HistoryPreprocessor(np.prod(envs[0].observation_space.shape), 4)
                      for _ in range(args.num_envs)]
     for i, env in enumerate(envs):
         env.seed(i+args.seed)
