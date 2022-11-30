@@ -28,7 +28,9 @@ RUN set -eux; \
   \
   apk add --no-cache --virtual .build-deps \
     gcc \
+    g++ \
     libc-dev \
+    libstdc++ \
     linux-headers \
     lua5.3-dev \
     make \
@@ -38,6 +40,12 @@ RUN set -eux; \
     readline-dev \
     tar \
   ; \
+  wget https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip; \
+  unzip eigen-3.4.0.zip; \
+  cp -r eigen-3.4.0/Eigen /usr/include/; \
+  ls /usr/include/; \
+  mkdir -p /usr/local/include/; \
+  ln -s /usr/include/Eigen /usr/local/include/; \
   \
   makeOpts=' \
     TARGET=linux-musl \
