@@ -20,8 +20,10 @@ CONFIGS=(
 
 bash build_haproxy_docker.sh
 for ((i = 0; i < ${#CONFIGS[@]}; i++)) do
-  echo "=============================================================="
-  echo "=== ${CONFIGS[$i]}"
-  echo "=============================================================="
-  bash simple_bench/bench.sh haproxy-2.4-alpine-dev ${CONFIGS[$i]} 4
+  for ((j = 1; j <= 32; j++)) do
+    echo "=============================================================="
+    echo "=== ${CONFIGS[$i]}, ${j}"
+    echo "=============================================================="
+    bash simple_bench/bench.sh haproxy-2.4-alpine-dev ${CONFIGS[$i]} 4 ${j}
+  done
 done

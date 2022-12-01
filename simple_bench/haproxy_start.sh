@@ -18,4 +18,4 @@ cp ${HAPROXY_CONFIG} haproxy.cfg
 cat ${HAPROXY_CONFIG}
 echo "From configuration file at ${HAPROXY_CONFIG}"
 
-docker run -d --name haproxy --net roachnet -v $(pwd):/usr/local/etc/haproxy:ro -p 8080:8080 ${HAPROXY_DOCKER_IMAGE}
+docker run -d --name haproxy --net roachnet -v $(pwd):/usr/local/etc/haproxy:ro -p 8085:8080 ${HAPROXY_DOCKER_IMAGE}
