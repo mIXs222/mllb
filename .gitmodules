@@ -7,3 +7,6 @@
 [submodule "park"]
 	path = park
 	url = https://github.com/mIXs222/park.git
+[submodule "simple-docker-http-server"]
+	path = simple-docker-http-server
+	url = git@github.com:KSonny4/simple-docker-http-server.git
