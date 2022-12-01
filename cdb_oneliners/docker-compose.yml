@@ -33,7 +33,7 @@ services:
   lb:
     container_name: lb
     hostname: lb
-    image: timveil/dynamic-haproxy:latest
+    image: alecdray22/dynamic-haproxy:latest
     ports:
       - "26257:26257"
       - "8080:8080"
@@ -61,7 +61,7 @@ services:
     container_name: ycsb-client
     hostname: ycsb-client
     image: alecdray22/go-ycsb:latest
-    command: load pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 && run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257
+    command: load pg -P workloads/workloada -p threads=16 -p operationcount=100000000 -p recordcount=100000 -p pg.host="lb" -p pg.port=26257 -p requestdistribution=zipfian && run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p threads=16 -p operationcount=100000000 -p recordcount=100000 -p requestdistribution=zipfian
     depends_on:
       - crdb-0
       - crdb-1
