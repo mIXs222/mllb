@@ -11,11 +11,11 @@ class IdentityPreprocessor(object):
         return x
 
 class HistoryPreprocessor(object):
-    def __init__(self, num_servers, hist_length):
-        self.num_servers = num_servers
+    def __init__(self, input_shape, hist_length):
+        self.input_shape = input_shape
         self.hist_length = hist_length
         self.obs_size = hist_length
-        self.hist = [np.zeros(num_servers, dtype=float) for _ in range(self.hist_length)]
+        self.hist = [np.zeros(input_shape, dtype=float) for _ in range(self.hist_length)]
 
     def reset(self):
         pass

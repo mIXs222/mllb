@@ -24,6 +24,7 @@ def train_episode(agent, envs, preprocessors, t_max, render):
     for p in preprocessors:
         p.reset()
     observations = [p.preprocess(e.reset()) for p, e in zip(preprocessors, envs)]
+    
 
     done = np.array([False for _ in range(num_envs)])
     all_done = False
@@ -75,7 +76,8 @@ def train_episode(agent, envs, preprocessors, t_max, render):
     # Perform a final update when all episodes are finished.
     if len(env_xs[0]) > 0:
         agent.train_step(env_xs, env_as, env_rs, env_vs)
-
+    
+    #print(envs[0].observe())
     return episode_rs
 
 def _2d_list(n):
@@ -93,9 +95,9 @@ if __name__ == '__main__':
     # parser.add_argument('--env-type', default='PongDeterministic-v4')
     parser.add_argument('--render', action='store_true')
     parser.add_argument('--save-dir', default='./checkpoints')
-    parser.add_argument('--save-every', type=int, default=1000)
+    parser.add_argument('--save-every', type=int, default=100)
     parser.add_argument('--num-episodes', type=int, default=100000)
-    parser.add_argument('--learning-rate', type=float, default=1e-1)
+    parser.add_argument('--learning-rate', type=float, default=1e-2)
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--print-every', type=int, default=1)
     parser.add_argument('--gpu', action='store_true')
@@ -113,12 +115,12 @@ if __name__ == '__main__':
 
     # Create and seed the environments
     envs = [park.make("haproxy") for _ in range(args.num_envs)]
-    preprocessors = [HistoryPreprocessor(np.prod(envs[0].observation_space.shape), 4)
+    preprocessors = [HistoryPreprocessor(envs[0].observation_space.shape, 10)
                      for _ in range(args.num_envs)]
     for i, env in enumerate(envs):
         env.seed(i+args.seed)
 
-    agent = Agent(preprocessors[0].obs_size, envs[0].action_space.n, config=config)
+    agent = Agent(preprocessors[0].obs_size * envs[0].observation_space.shape[0], envs[0].action_space.n, config=config)
 
     # Train
     running_reward = None

@@ -14,11 +14,13 @@ def batch_dot(data, xs):
 class Agent(ModelBase):
     def __init__(self, input_size, act_space, config):
         super(Agent, self).__init__()
-        self.ctx = config.ctx
+        if config:
+            self.ctx = config.ctx
         self.act_space = act_space
-        self.config = config
+        if config:
+            self.config = config
         self.add_param('fc1', (input_size, config.hidden_size_1))
-        # self.add_param('fc2', (config.hidden_size_1, config.hidden_size_2))
+        #self.add_param('fc2', (config.hidden_size_1, config.hidden_size_2))
         self.add_param('policy_fc_last', (config.hidden_size_1, 1))
         self.add_param('vf_fc_last', (act_space, 1))
         self.add_param('vf_fc_last_bias', (1,))
@@ -28,13 +30,16 @@ class Agent(ModelBase):
         # self.params['policy_fc_last'] /= 1000
 
         self.optim_configs = {}
-        for p in self.param_configs:
-            self.optim_configs[p] = {'learning_rate': self.config.learning_rate}
+        if config:
+            for p in self.param_configs:
+                self.optim_configs[p] = {'learning_rate': self.config.learning_rate}
 
     def forward(self, Xs):
-        hs = np.maximum(0, batch_dot(Xs, self.params['fc1']))
-        # hs = np.maximum(0, batch_dot(hs, self.params['fc2']))
-        logits = np.sum(batch_dot(hs, self.params['policy_fc_last']), axis=-1)
+        hs = batch_dot(Xs, self.params['fc1'])
+        relu1 = np.maximum(hs, 0) + np.minimum(hs * 0.01, 0)
+        #hs2 = batch_dot(relu1, self.params['fc2'])
+        #relu2 = np.maximum(hs2, 0) + np.minimum(hs2 * 0.01, 0)
+        logits = np.sum(batch_dot(relu1, self.params['policy_fc_last']), axis=-1)
         # logits = np.vstack([-X[-1] for X in Xs])
         ps = np.exp(logits - np.max(logits, axis=1, keepdims=True))
         ps /= np.sum(ps, axis=1, keepdims=True)
