@@ -64,6 +64,7 @@ RUN set -eux; \
   eval "make -C /usr/src/haproxy install-bin $makeOpts"; \
   \
   mkdir -p /usr/local/etc/haproxy; \
+  chown haproxy /usr/local/etc/haproxy; \
   cp -R /usr/src/haproxy/examples/errorfiles /usr/local/etc/haproxy/errors; \
   rm -rf /usr/src/haproxy; \
   \
@@ -85,8 +86,11 @@ RUN set -eux; \
 # "graceful stop is triggered when the SIGUSR1 signal is sent to the haproxy process"
 STOPSIGNAL SIGUSR1
 
-COPY  --chmod=755 haproxy_docker_entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["haproxy_docker_entrypoint.sh"]
+COPY  --chmod=755 docker-entrypoint.sh /usr/local/bin/
+COPY  params.txt /usr/local/etc/haproxy/params.txt
+ENTRYPOINT ["docker-entrypoint.sh"]
+	
+RUN set -ex && apk --no-cache add sudo
 
 USER haproxy
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
