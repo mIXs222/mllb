@@ -87,7 +87,7 @@ def process_stat_list(s):
     
     read_vec = [read_dur, read_qps/read_trials, read_lat/read_trials, read_99/read_trials, read_999/read_trials, read_9999/read_trials]
     update_vec = [upd_dur, upd_qps/upd_trials, upd_lat/upd_trials, upd_99/upd_trials, upd_999/upd_trials, upd_9999/upd_trials]
-    return zip(update_vec, read_vec)
+    return zip(read_vec, update_vec)
 
 def flist_to_csv(d, f_list):
     results = []
