@@ -57,14 +57,93 @@ services:
     depends_on:
       - lb
 
-  ycsb-client:
-    container_name: ycsb-client
-    hostname: ycsb-client
+  ycsb-init:
+    container_name: ycsb-init
+    hostname: ycsb-init
     image: alecdray22/go-ycsb:latest
-    command: load pg -P workloads/workloada -p threads=16 -p operationcount=100000000 -p recordcount=100000 -p pg.host="lb" -p pg.port=26257 -p requestdistribution=zipfian && run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p threads=16 -p operationcount=100000000 -p recordcount=100000 -p requestdistribution=zipfian
+    command: load pg -P workloads/workloada -p recordcount=100000 -p pg.host="lb" -p pg.port=26257 -p requestdistribution=zipfian
     depends_on:
       - crdb-0
       - crdb-1
       - crdb-2 
       - lb
       - crdb-init
+  
+  ycsb-client1:
+    container_name: ycsb-client1
+    hostname: ycsb-client1
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian
+    depends_on:
+      - ycsb-init
+
+  ycsb-client2:
+    container_name: ycsb-client2
+    hostname: ycsb-client2
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+  ycsb-client3:
+    container_name: ycsb-client3
+    hostname: ycsb-client3
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+
+  ycsb-client4:
+    container_name: ycsb-client4
+    hostname: ycsb-client4
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+
+  ycsb-client5:
+    container_name: ycsb-client5
+    hostname: ycsb-client5
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+
+  ycsb-client6:
+    container_name: ycsb-client6
+    hostname: ycsb-client6
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+
+  ycsb-client7:
+    container_name: ycsb-client7
+    hostname: ycsb-client7
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+      
+  ycsb-client8:
+    container_name: ycsb-client8
+    hostname: ycsb-client8
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+
+  ycsb-client9:
+    container_name: ycsb-client9
+    hostname: ycsb-client9
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
+      
+  ycsb-client10:
+    container_name: ycsb-client10
+    hostname: ycsb-client10
+    image: alecdray22/go-ycsb:latest
+    command: run pg -P workloads/workloada -p pg.host="lb" -p pg.port=26257 -p operationcount=10000 -p requestdistribution=zipfian 
+    depends_on:
+      - ycsb-init
