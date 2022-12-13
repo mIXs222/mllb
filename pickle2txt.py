@@ -4,8 +4,9 @@ def parse_pickle(path):
   with open(path, 'rb') as f:
     return pickle.load(f)
 
-def write_text(param, path):
+def write_text(model_name, param, path):
   with open(path, 'w') as f:
+    f.write(f"{model_name}\n")
     for key, value in param.items():
       print(f"Writing {key}, shape= {value.shape}")
       f.write(f"{key}\n")
@@ -29,6 +30,8 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Parse pickle parameter file into text file')
   parser.add_argument('in_pickle', type=str,
                       help='path to pickle parameter file')
+  parser.add_argument('model_name', type=str,
+                      help='model name')
   parser.add_argument('out_txt', type=str,
                       help='path to save text parameter file')
   args = parser.parse_args()
@@ -36,5 +39,5 @@ if __name__ == '__main__':
   param = parse_pickle(args.in_pickle)
   print(f'Loaded parameters: {param}')
 
-  write_text(param, args.out_txt)
+  write_text(args.model_name, param, args.out_txt)
   print(f'Wrote parameters into {args.out_txt}')
