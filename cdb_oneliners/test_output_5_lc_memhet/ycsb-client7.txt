@@ -1,0 +1,274 @@
+Attaching to ycsb-client7
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1644, OPS: 164.4, Avg(us): 1304, Min(us): 444, Max(us): 11495, 99th(us): 4411, 99.9th(us): 7359, 99.99th(us): 11495
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1634, OPS: 163.6, Avg(us): 4783, Min(us): 1849, Max(us): 70655, 99th(us): 11527, 99.9th(us): 15727, 99.99th(us): 70655
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3127, OPS: 156.4, Avg(us): 1361, Min(us): 444, Max(us): 11495, 99th(us): 5015, 99.9th(us): 8711, 99.99th(us): 11495
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3147, OPS: 157.4, Avg(us): 4977, Min(us): 1849, Max(us): 104191, 99th(us): 12079, 99.9th(us): 33695, 99.99th(us): 104191
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 24.029370172s
+[36mycsb-client7     |[0m READ   - Takes(s): 24.0, Count: 3736, OPS: 155.5, Avg(us): 1388, Min(us): 433, Max(us): 11495, 99th(us): 5139, 99.9th(us): 8951, 99.99th(us): 11495
+[36mycsb-client7     |[0m UPDATE - Takes(s): 24.0, Count: 3717, OPS: 154.8, Avg(us): 5043, Min(us): 1837, Max(us): 104191, 99th(us): 12343, 99.9th(us): 33855, 99.99th(us): 104191
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1591, OPS: 159.2, Avg(us): 1320, Min(us): 401, Max(us): 10119, 99th(us): 4539, 99.9th(us): 9679, 99.99th(us): 10119
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1627, OPS: 162.8, Avg(us): 4830, Min(us): 1777, Max(us): 16783, 99th(us): 10567, 99.9th(us): 16367, 99.99th(us): 16783
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3123, OPS: 156.2, Avg(us): 1336, Min(us): 396, Max(us): 15727, 99th(us): 5423, 99.9th(us): 10119, 99.99th(us): 15727
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3225, OPS: 161.3, Avg(us): 4882, Min(us): 1777, Max(us): 16783, 99th(us): 11327, 99.9th(us): 16367, 99.99th(us): 16783
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 23.503948142s
+[36mycsb-client7     |[0m READ   - Takes(s): 23.5, Count: 3602, OPS: 153.3, Avg(us): 1428, Min(us): 396, Max(us): 199039, 99th(us): 5763, 99.9th(us): 10119, 99.99th(us): 199039
+[36mycsb-client7     |[0m UPDATE - Takes(s): 23.5, Count: 3675, OPS: 156.4, Avg(us): 4969, Min(us): 1777, Max(us): 91007, 99th(us): 12095, 99.9th(us): 16783, 99.99th(us): 91007
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1127, OPS: 112.7, Avg(us): 2021, Min(us): 478, Max(us): 38879, 99th(us): 8951, 99.9th(us): 31439, 99.99th(us): 38879
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1221, OPS: 122.3, Avg(us): 6296, Min(us): 1814, Max(us): 65599, 99th(us): 19359, 99.9th(us): 41695, 99.99th(us): 65599
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 2622, OPS: 131.1, Avg(us): 1697, Min(us): 435, Max(us): 38879, 99th(us): 7795, 99.9th(us): 15735, 99.99th(us): 38879
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 2699, OPS: 135.0, Avg(us): 5733, Min(us): 1612, Max(us): 123647, 99th(us): 16767, 99.9th(us): 33183, 99.99th(us): 123647
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 24.509581649s
+[36mycsb-client7     |[0m READ   - Takes(s): 24.5, Count: 3301, OPS: 134.7, Avg(us): 1679, Min(us): 435, Max(us): 38879, 99th(us): 7703, 99.9th(us): 24207, 99.99th(us): 38879
+[36mycsb-client7     |[0m UPDATE - Takes(s): 24.5, Count: 3347, OPS: 136.6, Avg(us): 5640, Min(us): 1612, Max(us): 123647, 99th(us): 16159, 99.9th(us): 33183, 99.99th(us): 123647
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1551, OPS: 155.2, Avg(us): 1341, Min(us): 435, Max(us): 10431, 99th(us): 4715, 99.9th(us): 9439, 99.99th(us): 10431
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1554, OPS: 155.4, Avg(us): 5066, Min(us): 1840, Max(us): 99071, 99th(us): 13023, 99.9th(us): 23679, 99.99th(us): 99071
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3146, OPS: 157.3, Avg(us): 1327, Min(us): 412, Max(us): 12671, 99th(us): 4715, 99.9th(us): 9959, 99.99th(us): 12671
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3160, OPS: 158.0, Avg(us): 4982, Min(us): 1792, Max(us): 124223, 99th(us): 11423, 99.9th(us): 23679, 99.99th(us): 124223
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 23.589644448s
+[36mycsb-client7     |[0m READ   - Takes(s): 23.6, Count: 3628, OPS: 153.8, Avg(us): 1397, Min(us): 412, Max(us): 28431, 99th(us): 5543, 99.9th(us): 11423, 99.99th(us): 28431
+[36mycsb-client7     |[0m UPDATE - Takes(s): 23.6, Count: 3644, OPS: 154.5, Avg(us): 5056, Min(us): 1792, Max(us): 124223, 99th(us): 13143, 99.9th(us): 23679, 99.99th(us): 124223
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1547, OPS: 154.7, Avg(us): 1424, Min(us): 433, Max(us): 25807, 99th(us): 6227, 99.9th(us): 11975, 99.99th(us): 25807
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1567, OPS: 156.8, Avg(us): 4950, Min(us): 1579, Max(us): 44191, 99th(us): 13855, 99.9th(us): 31535, 99.99th(us): 44191
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 2670, OPS: 133.5, Avg(us): 1711, Min(us): 433, Max(us): 46399, 99th(us): 8019, 99.9th(us): 18815, 99.99th(us): 46399
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 2677, OPS: 133.9, Avg(us): 5738, Min(us): 1579, Max(us): 67775, 99th(us): 17407, 99.9th(us): 32751, 99.99th(us): 67775
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 33.722454587s
+[36mycsb-client7     |[0m READ   - Takes(s): 33.7, Count: 2830, OPS: 83.9, Avg(us): 5656, Min(us): 433, Max(us): 10895359, 99th(us): 9703, 99.9th(us): 28527, 99.99th(us): 10895359
+[36mycsb-client7     |[0m UPDATE - Takes(s): 33.7, Count: 2825, OPS: 83.8, Avg(us): 6244, Min(us): 1579, Max(us): 137087, 99th(us): 25503, 99.9th(us): 67775, 99.99th(us): 137087
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1840, OPS: 184.0, Avg(us): 1064, Min(us): 386, Max(us): 11943, 99th(us): 3507, 99.9th(us): 8399, 99.99th(us): 11943
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1828, OPS: 182.9, Avg(us): 4375, Min(us): 1597, Max(us): 69759, 99th(us): 12375, 99.9th(us): 30223, 99.99th(us): 69759
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3438, OPS: 171.9, Avg(us): 1095, Min(us): 343, Max(us): 35007, 99th(us): 3873, 99.9th(us): 11423, 99.99th(us): 35007
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3396, OPS: 169.8, Avg(us): 4756, Min(us): 1597, Max(us): 126527, 99th(us): 19359, 99.9th(us): 73919, 99.99th(us): 126527
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 21.700452394s
+[36mycsb-client7     |[0m READ   - Takes(s): 21.7, Count: 3722, OPS: 171.5, Avg(us): 1098, Min(us): 343, Max(us): 35007, 99th(us): 3873, 99.9th(us): 8647, 99.99th(us): 35007
+[36mycsb-client7     |[0m UPDATE - Takes(s): 21.7, Count: 3654, OPS: 168.4, Avg(us): 4794, Min(us): 1597, Max(us): 126527, 99th(us): 18383, 99.9th(us): 71487, 99.99th(us): 126527
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1083, OPS: 108.4, Avg(us): 1498, Min(us): 341, Max(us): 18767, 99th(us): 7711, 99.9th(us): 14839, 99.99th(us): 18767
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1074, OPS: 107.4, Avg(us): 7770, Min(us): 1633, Max(us): 156287, 99th(us): 31919, 99.9th(us): 83519, 99.99th(us): 156287
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 2733, OPS: 136.7, Avg(us): 1312, Min(us): 326, Max(us): 31503, 99th(us): 6743, 99.9th(us): 14839, 99.99th(us): 31503
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 2782, OPS: 139.1, Avg(us): 5873, Min(us): 1633, Max(us): 156287, 99th(us): 26447, 99.9th(us): 48607, 99.99th(us): 156287
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 22.308702611s
+[36mycsb-client7     |[0m READ   - Takes(s): 22.3, Count: 3126, OPS: 140.2, Avg(us): 1290, Min(us): 326, Max(us): 31503, 99th(us): 6255, 99.9th(us): 14839, 99.99th(us): 31503
+[36mycsb-client7     |[0m UPDATE - Takes(s): 22.3, Count: 3142, OPS: 140.9, Avg(us): 5790, Min(us): 1633, Max(us): 236799, 99th(us): 25359, 99.9th(us): 56287, 99.99th(us): 236799
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 843, OPS: 84.5, Avg(us): 2077, Min(us): 411, Max(us): 84351, 99th(us): 10279, 99.9th(us): 76607, 99.99th(us): 84351
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 863, OPS: 86.3, Avg(us): 9531, Min(us): 2314, Max(us): 225279, 99th(us): 42239, 99.9th(us): 80703, 99.99th(us): 225279
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 2070, OPS: 103.6, Avg(us): 1803, Min(us): 407, Max(us): 84351, 99th(us): 9231, 99.9th(us): 27727, 99.99th(us): 84351
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 2094, OPS: 104.7, Avg(us): 7741, Min(us): 1771, Max(us): 230783, 99th(us): 36575, 99.9th(us): 80703, 99.99th(us): 230783
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 21.556384667s
+[36mycsb-client7     |[0m READ   - Takes(s): 21.5, Count: 2261, OPS: 105.0, Avg(us): 1810, Min(us): 407, Max(us): 84351, 99th(us): 9231, 99.9th(us): 27727, 99.99th(us): 84351
+[36mycsb-client7     |[0m UPDATE - Takes(s): 21.6, Count: 2276, OPS: 105.6, Avg(us): 7646, Min(us): 1771, Max(us): 230783, 99th(us): 36351, 99.9th(us): 80703, 99.99th(us): 230783
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1544, OPS: 154.5, Avg(us): 1100, Min(us): 396, Max(us): 20479, 99th(us): 3719, 99.9th(us): 9399, 99.99th(us): 20479
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1629, OPS: 163.0, Avg(us): 5071, Min(us): 1701, Max(us): 50175, 99th(us): 22943, 99.9th(us): 30895, 99.99th(us): 50175
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3013, OPS: 150.7, Avg(us): 1133, Min(us): 333, Max(us): 37919, 99th(us): 3973, 99.9th(us): 16431, 99.99th(us): 37919
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3077, OPS: 153.9, Avg(us): 5365, Min(us): 1633, Max(us): 84927, 99th(us): 23711, 99.9th(us): 50175, 99.99th(us): 84927
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 22.067041318s
+[36mycsb-client7     |[0m READ   - Takes(s): 22.1, Count: 3407, OPS: 154.4, Avg(us): 1134, Min(us): 333, Max(us): 37919, 99th(us): 3959, 99.9th(us): 16431, 99.99th(us): 37919
+[36mycsb-client7     |[0m UPDATE - Takes(s): 22.1, Count: 3471, OPS: 157.3, Avg(us): 5218, Min(us): 1633, Max(us): 84927, 99th(us): 22591, 99.9th(us): 50175, 99.99th(us): 84927
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1581, OPS: 158.1, Avg(us): 1316, Min(us): 425, Max(us): 9735, 99th(us): 4987, 99.9th(us): 8607, 99.99th(us): 9735
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1524, OPS: 152.5, Avg(us): 5172, Min(us): 1799, Max(us): 109055, 99th(us): 15423, 99.9th(us): 41983, 99.99th(us): 109055
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3025, OPS: 151.3, Avg(us): 1201, Min(us): 336, Max(us): 9735, 99th(us): 4139, 99.9th(us): 8607, 99.99th(us): 9735
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3026, OPS: 151.4, Avg(us): 5384, Min(us): 1675, Max(us): 150399, 99th(us): 23471, 99.9th(us): 69503, 99.99th(us): 150399
+[36mycsb-client7     |[0m 
+[36mycsb-client7     |[0m Got signal [terminated] to exit.
+[36mycsb-client7     |[0m Run finished, takes 22.371269353s
+[36mycsb-client7     |[0m READ   - Takes(s): 22.4, Count: 3490, OPS: 156.0, Avg(us): 1178, Min(us): 336, Max(us): 9735, 99th(us): 4053, 99.9th(us): 8607, 99.99th(us): 9735
+[36mycsb-client7     |[0m UPDATE - Takes(s): 22.4, Count: 3507, OPS: 156.8, Avg(us): 5181, Min(us): 1675, Max(us): 150399, 99th(us): 21087, 99.9th(us): 54879, 99.99th(us): 150399
+[36mycsb-client7     |[0m Using request distribution 'zipfian' a keyrange of [0 1000]
+[36mycsb-client7     |[0m ***************** properties *****************
+[36mycsb-client7     |[0m "readproportion"="0.5"
+[36mycsb-client7     |[0m "workload"="core"
+[36mycsb-client7     |[0m "scanproportion"="0"
+[36mycsb-client7     |[0m "pg.host"="lb"
+[36mycsb-client7     |[0m "recordcount"="1000"
+[36mycsb-client7     |[0m "pg.port"="26257"
+[36mycsb-client7     |[0m "dotransactions"="true"
+[36mycsb-client7     |[0m "insertproportion"="0"
+[36mycsb-client7     |[0m "readallfields"="true"
+[36mycsb-client7     |[0m "operationcount"="10000"
+[36mycsb-client7     |[0m "updateproportion"="0.5"
+[36mycsb-client7     |[0m "requestdistribution"="zipfian"
+[36mycsb-client7     |[0m "command"="run"
+[36mycsb-client7     |[0m **********************************************
+[36mycsb-client7     |[0m READ   - Takes(s): 10.0, Count: 1765, OPS: 176.6, Avg(us): 1186, Min(us): 443, Max(us): 10735, 99th(us): 4423, 99.9th(us): 9031, 99.99th(us): 10735
+[36mycsb-client7     |[0m UPDATE - Takes(s): 10.0, Count: 1804, OPS: 180.5, Avg(us): 4355, Min(us): 1582, Max(us): 68223, 99th(us): 12047, 99.9th(us): 23103, 99.99th(us): 68223
+[36mycsb-client7     |[0m READ   - Takes(s): 20.0, Count: 3557, OPS: 177.9, Avg(us): 1081, Min(us): 356, Max(us): 11759, 99th(us): 3845, 99.9th(us): 8471, 99.99th(us): 11759
+[36mycsb-client7     |[0m UPDATE - Takes(s): 20.0, Count: 3648, OPS: 182.4, Avg(us): 4404, Min(us): 1582, Max(us): 68223, 99th(us): 16207, 99.9th(us): 34463, 99.99th(us): 68223
+[36mycsb-client7     |[0m Run finished, takes 24.881877495s
+[36mycsb-client7     |[0m READ   - Takes(s): 24.9, Count: 5007, OPS: 201.3, Avg(us): 990, Min(us): 337, Max(us): 11759, 99th(us): 3661, 99.9th(us): 8471, 99.99th(us): 10735
+[36mycsb-client7     |[0m UPDATE - Takes(s): 24.9, Count: 4993, OPS: 200.7, Avg(us): 3968, Min(us): 1427, Max(us): 68223, 99th(us): 15063, 99.9th(us): 40415, 99.99th(us): 68223
