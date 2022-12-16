@@ -142,6 +142,34 @@ def save_dict_plot(labels, resultDict, file_name, title, metric):
     plt.close()
     return True
 
+def dict_to_plot(five_res):
+    thptDict = {}
+    latDict = {}
+    models = []
+    for key in five_res:
+        if key == 'memhet':
+            continue
+        else:
+            model = five_res[key][0][0]
+            print(model)
+            models.append(model)
+            if model not in thptDict:
+                thptDict[model] = []
+            if model not in latDict:
+                latDict[model] = []
+            thptDict[model].append([key,five_res[key][0][1][2][0]])
+            latDict[model].append([key, five_res[key][0][1][2][1]/1000])
+
+    #now we have Dict mapping each model to all its thpt and lat results..
+    #Do THPT FIRST
+    models = [*set(models)]
+    print(models)
+    fig, ax = plt.subplots()
+    x = np.arange(len(models)) 
+    for key in thptDict:
+        print(key)
+    return True 
+
 def results_to_plots(label, res):
     save_path = "./" + PLOT_DIR_NAME + "/" + label + "/"
 
@@ -235,6 +263,7 @@ for setting in SETTINGS:
     five_res[setting] = []
     three_res[setting] = []
 
+models=[]
 
 for model in dirMap:
     if len(dirMap[model]) == 0:
@@ -242,6 +271,7 @@ for model in dirMap:
     readout = [sum(x) for x in dirMap[model][0]]
     updateout = [sum(x) for x in dirMap[model][1]]
     totalout = [sum(x) for x in zip(readout, updateout)]
+
 
     print("\n" + model)
     print("format: [QPS, Avg(lat), 99th(lat), 99.9th(lat), 99.99th(lat)]")
@@ -254,14 +284,21 @@ for model in dirMap:
         key = "normal"
         if (len(toks) > 2):
             key = '_'.join(toks[2:])
+            print(key)
         five_res[key].append((toks[1], [readout[1:], updateout[1:], totalout[1:]])) #each res -> SETTINGS -> model_name, results from each model
     else:
         key = "normal"
         if (len(toks) > 1):
             key = '_'.join(toks[1:])
+            print(key)
         three_res[key].append((toks[0], [readout[1:], updateout[1:], totalout[1:]]))
 
+
+dict_to_plot(five_res)
+
 for key in three_res:
-    results_to_plots(key, three_res[key])
+    #results_to_plots(key, three_res[key])
+    print(key)
 for key in five_res:
-    results_to_plots("5_node_" + key, five_res[key])
+    #results_to_plots("5_node_" + key, five_res[key])
+    print(key)
